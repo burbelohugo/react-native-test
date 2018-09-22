@@ -32,7 +32,7 @@ class Blink extends Component {
 export default class App extends Component {
   render() {
     return (
-      <View style={{flex: 1, flexDirection: 'column', justifyContent: 'space-between'}}>
+      <View style={{flex: 1, flexDirection: 'column', alignItems: 'stretch', justifyContent: 'space-between'}}>
         <View style={{flex: .10, backgroundColor: 'powderblue'}} />
         <View style={{flex: .2, backgroundColor: 'skyblue'}} />
         <View style={{flex: .10, backgroundColor: 'steelblue'}} />
