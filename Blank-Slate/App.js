@@ -9,10 +9,21 @@ class Greeting extends Component {
   }
 }
 
-class AnotherGreeting extends Component {
-  render() {
+class Blink extends Component {
+  constructor(props){
+    super(props)
+    this.state = {isShowingText: true}
+
+    setInterval(() => {
+      this.setState(previousState => {
+        return { isShowingText: !previousState.isShowingText };
+      })
+    }, 1000)
+  }
+  render(){
+    let display = this.state.isShowingText ? this.props.text: ' ';
     return (
-      <Text>Hi there, your age is {this.props.age}.</Text>
+      <Text>{display}</Text>
     )
   }
 }
@@ -25,7 +36,7 @@ export default class App extends Component {
         <Greeting name="Hugo"/>
         <Greeting name="Hugo"/>
         <Greeting name="Hugo"/>
-        <AnotherGreeting age="12"/>
+        <Blink text="yessss do this!" />
       </View>
     )
   }
