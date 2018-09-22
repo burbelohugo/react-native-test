@@ -1,22 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View, AppRegistry, Image } from 'react-native';
 
-export default class App extends React.Component {
+class Greeting extends Component {
   render() {
-    let pic = {
-      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
-    };
     return (
-      <Image source={pic} style={{width: 193, height: 100}}/>
-    )
+      <Text>Hello {this.props.name}!</Text>
+    );
   }
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
+
+export default class App extends Component {
+  render() {
+    return (
+      <View style={{justifyContent: 'center', alignItems: 'center'}}>
+        <Greeting name="Hugo"/>
+        <Greeting name="Hugo"/>
+        <Greeting name="Hugo"/>
+      </View>
+    )
+  }
+}
