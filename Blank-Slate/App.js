@@ -9,6 +9,14 @@ class Greeting extends Component {
   }
 }
 
+class AnotherGreeting extends Component {
+  render() {
+    return (
+      <Text>Hi there, your age is {this.props.age}.</Text>
+    )
+  }
+}
+
 
 export default class App extends Component {
   render() {
@@ -17,6 +25,7 @@ export default class App extends Component {
         <Greeting name="Hugo"/>
         <Greeting name="Hugo"/>
         <Greeting name="Hugo"/>
+        <AnotherGreeting age="12"/>
       </View>
     )
   }
