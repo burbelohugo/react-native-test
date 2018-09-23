@@ -1,32 +1,20 @@
-class Blink extends Component {
+export default class PizzaTranslator extends Component {
   constructor(props) {
     super(props);
-    this.state = {isShowingText: true};
-
-    // Toggle the state every second
-    setInterval(() => {
-      this.setState(previousState => {
-        return { isShowingText: !previousState.isShowingText };
-      });
-    }, 1000);
+    this.state = {text: ''};
   }
 
   render() {
-    let display = this.state.isShowingText ? this.props.text : ' ';
     return (
-      <Text>{display}</Text>
-    );
-  }
-}
-
-export default class BlinkApp extends Component {
-  render() {
-    return (
-      <View>
-        <Blink text='I love to blink' />
-        <Blink text='Yes blinking is so great' />
-        <Blink text='Why did they ever take this out of HTML' />
-        <Blink text='Look at me look at me look at me' />
+      <View style={{padding: 10}}>
+        <TextInput
+          style={{height: 40}}
+          placeholder="Type here to translate!"
+          onChangeText={(text) => this.setState({text})}
+        />
+        <Text style={{padding: 10, fontSize: 42}}>
+          {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
+        </Text>
       </View>
     );
   }
