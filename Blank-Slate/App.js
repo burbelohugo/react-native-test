@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View, AppRegistry, Image } from 'react-native';
+import { StyleSheet, Button, Alert, Text, TextInput, View, AppRegistry, Image } from 'react-native';
 
 class Greeting extends Component {
   render() {
@@ -46,6 +46,12 @@ export default class App extends Component {
       <Text style ={{padding:10, fontSize: 42}}>
       {this.state.text.split(' ').map((word) => word && '🍕').join(' ')}
       </Text>
+      <Button
+        onPress={() => {
+          Alert.alert('You tapped the button!');
+        }}
+        title="Press Me"
+      />
       </View>
     )
   }
